@@ -30,17 +30,23 @@ CREATE TABLE IF NOT EXISTS `mahasiswa` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table crud_php.mahasiswa: ~3 rows (approximately)
+INSERT INTO `mahasiswa` (`id`, `nama`, `noic`, `email`, `jurusan`, `gambar`) VALUES
+	(1, 'amirul nazmi zakaria', '50217999', 'channazmi8@gmai.com', 'mechanical enginnering', 'chan.jpg'),
+	(2, 'muhammad ali syakirin', '50217888', 'abadulali8@gmai.com', 'sofware enginnering', 'ali.jpg'),
+	(3, 'ahmad abu hasan', '5021777', 'abuhasan08@gmai.com', 'foodtech', 'abu.jpg');
 
 -- Dumping structure for table crud_php.user
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(200) NOT NULL,
-  `pasword` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table crud_php.user: ~1 rows (approximately)
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+	(1, 'channza', 'cdsfdfsf');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
