@@ -25,3 +25,23 @@ function query($query)
   }
   return $rows;
 }
+
+function tambahData($data)
+{
+  //cek input dari user ada symbol > < guna htmlspecialchar
+  $nama = htmlspecialchars($data["nama"]);
+  $noic = htmlspecialchars($data["noic"]);
+  $email = htmlspecialchars($data["email"]);
+  $jurusan = htmlspecialchars($data["jurusan"]);
+  $gambar = htmlspecialchars($data["gambar"]);
+
+  $conn = connect();
+  $queryTambah = "INSERT INTO mahasiswa
+                    VALUES (null, '$nama', '$noic', '$email' , '$jurusan' , '$gambar' )
+                    ";
+  mysqli_query($conn, $queryTambah);
+  // kasitau error untuk debug
+  echo mysqli_error($conn);
+  //selain tambahdata dia akan return nilai jika 1- berjaya diubah 0-tidak ada pape -1) error
+  return mysqli_affected_rows($conn); //untuk kasitau ada baris yang berubah di database
+}
